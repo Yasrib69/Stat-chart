@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 01: Stats</title>
+    <link rel="stylesheet" href="../css/site.css">     <!-- Link to external CSS for styling -->
+    <script src="../js/stats_functions.js" defer></script>    <!-- Link to external JavaScript file for calculations -->
+    <!-- 
+    Class: COSC 231.1
+    Name: Yasrib Yasir Farook
+    EID: E02726322
+    Project: 01
+    Date: 2024-10-19 SAT T 23:59:59 Z-04:00
+    Requires: css/site.css, js/stats_functions.js
+    Description: This HTML file creates a web page to display statistical information 
+                 about a given sample set, including mean, median, variance, and 
+                 standard deviation. It includes a table to show results and an input 
+                 form for the user to enter new sample sets. JavaScript handles all 
+                 calculations and table updates.
+    -->
+</head>
+<body>
+    <header id="my_header"> <!-- Header Section -->
+        <h1>Sample Set Statistics:</h1>
+    </header>
+    <hr>
+    <!-- Output section: displays the statistics table -->
+    <div id="my_output">
+        <h2>Statistics for the given sample set:</h2>
+        <table id="my_table" border="1">             <!-- Table row: Displays the sample set -->
+            <tr>
+                <th class="tbl_row_headers">Sample Set (Ordered):</th>
+                <th class="tbl_row_eqns">x = (x₁, ..., xn)</th>
+                <th class="tbl_row_data">x = (1,3,5,7,9)</th>
+            </tr>
+            <tr>
+                <th class="tbl_row_headers">Sample Size:</th>
+                <th class="tbl_row_eqns">n = size(x) or x.length</th>
+                <td class="tbl_row_data">n = 5</td>
+            </tr>
+            <tr>
+                <th class="tbl_row_headers">Sample Minimum:</th>
+                <th class="tbl_row_eqns">x<sub>min</sub> = x₁</th>
+                <td class="tbl_row_data">x<sub>min</sub> = 1</td>
+            </tr>
+            <tr>
+                <th class="tbl_row_headers">Sample Maximum:</th>
+                <th class="tbl_row_eqns">x
+                    <sub>min</sub>
+                     = x
+                    <sub>n</sub></th>
+                <td class="tbl_row_data">x<sub>max</sub> = 9</td>
+            </tr>
+            <tr>
+                <th class="tbl_row_headers">Sample Sum:</th>
+                <th class="tbl_row_eqns">(i=1:n)∑x
+                    <sub>i</sub></th>
+                <td class="tbl_row_data">∑ = 25</td>
+            </tr>
+            <tr>
+                <th class="tbl_row_headers">Sample Mean:</th>
+                <th class="tbl_row_eqns">x̄ = (∑xᵢ) / n</th>
+                <td class="tbl_row_data">x̄ = 5</td>
+            </tr>
+            <tr>
+                <th class="tbl_row_headers">Sample Median:</th>
+                <th class="tbl_row_eqns">1° (n%2 == 1): x̃ = x
+                    <sub>(n+1)/2</sub>
+                    <br>
+                    
+                    2° (n%2 == 0): x̃ = (x
+                    <sub>n/2</sub>
+                     + x
+                    <sub>n/2+1</sub>
+                    ) / 2 </th>
+                <td class="tbl_row_data">x̃ = 5</td>
+            </tr>
+            <tr>
+                <th class="tbl_row_headers">Sample Variance:</th>
+                <th class="tbl_row_eqns">s² = ∑(xᵢ - x̄)² / (n-1)</th>
+                <td class="tbl_row_data">s² = 10</td>
+            </tr>
+            <tr>
+                <th class="tbl_row_headers">Sample Standard Deviation:</th>
+                <th class="tbl_row_eqns">s = √(s²)</th>
+                <td class="tbl_row_data">s = 3.162</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div id="my_input">
+        <h2>Input New Sample Set:</h2>
+        <p>Input a comma-Separated set of numbers and press the button to calculate a new table.</p>
+        <form id="input_form">  <!-- Form for user input -->
+            <label for="input_set">Comma-Separated values below:
+            </label><br>
+            <input type="text" id="input_set" value="1,3,5,7,9">
+        </form>
+        <button onclick="update_stats()">Calculate</button>         <!-- Button to trigger calculations -->
+
+    </div>
+    <hr>     <!-- Horizontal line separating sections -->
+
+    <footer id="my_footer">   <!-- Footer Section -->
+        <div id="copyright">
+            &copy; 2024 - Yasrib Yasir Farook
+        </div>
+        <address id="my_contact">
+            <p><a href="mailto:yfarook@emich.edu">Email me</a> - Yasrib Yasir Farook</p>
+            <p><a href="tel:+1234567890">Call me</a></p>
+            <p>Visit <a href="https://emich.edu" target="emu">EMU</a></p>
+        </address>
+    </footer>
+</body>
+</html>
